@@ -1,20 +1,15 @@
-import geometry.*;
+import geometry.Rectangle;
 
 public class Main {
     public static void main(String[] args) {
-        circle[] circles = new circle[2];
-        circles[0] = new circle(new Point(0, 0), 5.0);
-        circles[1] = new ColoredCircle(new Point(2, 2), 3.0, "red");
+        Rectangle rectangle = new Rectangle(4.0, 6.0);
 
-        for (circle circle : circles) {
-            double area = circle.GetArea();
-            System.out.println("Pole koła: " + area);
+        double area = rectangle.calculateArea();
+        double perimeter = rectangle.calculatePerimeter();
 
-            if (circle instanceof ColoredCircle) {
-                String color = ((ColoredCircle) circle).getColor();
-                System.out.println("Kolor koła: " + color);
-
-            }
-        }
+        System.out.println("Długość prostokąta: " + rectangle.getLength());
+        System.out.println("Szerokość prostokąta: " + rectangle.getWidth());
+        System.out.println("Pole prostokąta: " + area);
+        System.out.println("Obwód prostokąta: " + perimeter);
     }
 }
